@@ -18,11 +18,11 @@ namespace ConsoleApp2
             //Utilisation du Getter pour récupérer le message
             String helloMessage = message.GetHelloMessage();
 
-            //Valeur null par defaut
-            String menu = "";
+            //Valeur input du menu
+            String menu;
 
             //Bouvle d'affichage du message
-            while (menu == "")
+            do
             {
                 //Affiche le message dans la console
                 Console.WriteLine(helloMessage);
@@ -31,14 +31,10 @@ namespace ConsoleApp2
                 Console.WriteLine("enter to continue or write exit");
 
                 //Récupére la valeur tapé
-                String input = Console.ReadLine();
-
-                while (input != "" && menu != "exit")
-                {
-                    menu = input;
-                }
+                menu = Console.ReadLine();
             }
 
+            while (menu != "exit") ;
         }
     }
 }
