@@ -21,38 +21,23 @@ namespace ConsoleApp2
             String helloMessage = message.GetHelloMessage();
 
             //Valeur null par defaut
-            int exit = 0;
+            String menu = "";
 
             //Bouvle d'affichage du message
-            while (exit == 0)
+            while (menu == "")
             {
                 //Affiche le message dans la console
                 Console.WriteLine(helloMessage);
 
                 //Le programme s'arrete si la touche est différente de Enter, sinon elle reboucle sur l'affichage du message
                 Console.WriteLine("enter to continue or write exit");
-                int error = 0;
-                while (error == 0)
+
+                //Récupére la valeur tapé
+                String input = Console.ReadLine();
+
+                while (input != "" && menu != "exit")
                 {
-                    //Récupére la valeur tapé
-                    String menu = Console.ReadLine();
-                    //Si exit le programme s'arrete
-                    if (menu == "exit")
-                    {
-                        exit = 1;
-                        error = 1;
-                    }
-                    //Si entrée il redémarre du début
-                    else if (menu == "")
-                    {
-                        exit = 0;
-                        error = 1;
-                    }
-                    //Il ne fait rien et attend une nouvelle entrée
-                    else
-                    {
-                        error = 0;
-                    }
+                    menu = input;
                 }
             }
 
