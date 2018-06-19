@@ -14,6 +14,7 @@ namespace ConsoleApp2
             //DateTime today = DateTime.Now;
             DateTime today = new DateTime(2019,6,24,10,0,0);
 
+
             //Instansiation du message avec la date en paramètre
             Message message = new Message(today);
             //Utilisation du Getter pour récupérer le message
@@ -29,9 +30,32 @@ namespace ConsoleApp2
                 Console.WriteLine(helloMessage);
 
                 //Le programme s'arrete si la touche est différente de Enter, sinon elle reboucle sur l'affichage du message
-                if(Console.ReadKey().Key != ConsoleKey.Enter) { exit = 1; }
-                else { exit = 0; }  
+                Console.WriteLine("enter to continue or write exit");
+                int error = 0;
+                while (error == 0)
+                {
+                    //Récupére la valeur tapé
+                    String menu = Console.ReadLine();
+                    //Si exit le programme s'arrete
+                    if (menu == "exit")
+                    {
+                        exit = 1;
+                        error = 1;
+                    }
+                    //Si entrée il redémarre du début
+                    else if (menu == "")
+                    {
+                        exit = 0;
+                        error = 1;
+                    }
+                    //Il ne fait rien et attend une nouvelle entrée
+                    else
+                    {
+                        error = 0;
+                    }
+                }
             }
+
         }
     }
 }
