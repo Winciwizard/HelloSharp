@@ -10,13 +10,11 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            //Variables de test : Maintenant et une manuel
-            DateTime today = DateTime.Now;
-            //DateTime today = new DateTime(2019,6,25,10,0,0);
-
+            //Variables de test manuel
+            DateTime today = new DateTime(2019,6,25,10,0,0);
 
             //Instansiation du message avec la date en paramètre
-            Message message = new Message(today,8,14,19);
+            Message message = new Message();
             //Utilisation du Getter pour récupérer le message
             String helloMessage = message.GetHelloMessage();
 
